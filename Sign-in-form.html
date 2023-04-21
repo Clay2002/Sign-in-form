@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in sheet</title>
+</head>
+<body>
+    
+
+
+
+
+<div id ="container-1">
+
+
+<input  placeholder = "Enter a username" id = "userinput">
+
+
+
+<div id = "displayoutput"></div>
+
+<input type= "password" placeholder = "Enter Password" id = "passwordinput">
+
+
+
+
+<div id = "displayoutputpassword"></div>
+
+
+<button onclick = "submit()" id =  "submit-btn">Submit</button>
+
+
+<div id ="submit-output"></div>
+
+
+
+</div>
+
+
+
+
+<button id = "show" type = "checkbox" onclick="Toggle()">show</button>
+
+</body>
+
+</html>
+
+
+<script>
+
+
+
+
+
+function submit(){
+
+
+
+    var outputpassword = document.getElementById("displayoutputpassword");
+        var userinputpassword = document.getElementById("passwordinput").value;
+
+
+        if (userinputpassword.length < 7) {
+            outputpassword.textContent = 'Password must contain at least 7 or more characters';
+
+
+    } else { 
+        
+        outputpassword.textContent = 'your password is Saved';
+
+
+    }
+    var output = document.getElementById("displayoutput");
+        var userinput = document.getElementById("userinput").value;
+
+
+        if (userinput.length < 5) {
+        output.textContent = 'UserName must contain at least 5 or more characters';
+
+
+    } else { 
+        
+    output.textContent = 'your username is: ' + userinput;
+
+
+    }
+
+
+
+    var submit = document.getElementById("submit-output");
+
+    if (userinputpassword.length > 7 && userinput.length >  5)
+
+    submit.textContent = "welcome " + userinput +"!";
+
+
+};
+
+
+
+
+function Toggle(){
+
+    var temp = document.getElementById("passwordinput");
+     if (temp.type === "password"){
+
+        temp.type = "text";
+
+
+     } else {
+temp.type = "password";
+
+
+     }
+
+
+
+
+
+};
+
+
+
+</script>
+
+
+<style>
+
+
+#container-1{
+
+
+    border: solid black 1px;
+    margin: auto;
+    text-align: center;
+    position:relative;
+    background-color: rgb(187, 194, 194);
+
+}
+
+
+#submit-btn{
+
+    margin-top: 100px;
+    padding: 10px;
+    background-color: rgb(61, 179, 61);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 30px;
+
+
+}
+
+
+
+
+#userinput{
+
+    margin-top: 200px;
+    padding: 5px;
+    border: black solid 3px;
+
+}
+
+
+
+#passwordinput{
+
+
+    padding: 5px;
+    margin-top: 25px;
+    border: black solid 3px;
+}
+
+
+#show{
+    padding: 1px;
+
+}
+
+
+</style>
